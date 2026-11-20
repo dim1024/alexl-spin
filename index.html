@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpinStop</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <header>
+      <h1>SPINSTOP</h1>
+      <p class="subtitle">Press <kbd>SPACE</kbd> or <strong>Click / Tap</strong> inside the target arc</p>
+    </header>
+
+    <!-- HUD (Score, Lives, Best) -->
+    <div class="hud">
+      <div class="hud-box">
+        <span class="label" id="stat1-label">SCORE</span>
+        <span class="value" id="stat1-value">0</span>
+      </div>
+      <div class="hud-box">
+        <span class="label" id="stat2-label">BEST</span>
+        <span class="value" id="stat2-value">0</span>
+      </div>
+    </div>
+
+    <!-- Main Game Canvas -->
+    <div class="canvas-wrapper">
+      <canvas id="gameCanvas" width="360" height="360"></canvas>
+
+      <!-- Overlay Menu (Start / Game Over / Level Win) -->
+      <div id="overlay" class="overlay">
+        <h2 id="overlay-title">CHOOSE A MODE</h2>
+        <p id="overlay-message">Test your timing across 4 arcade modes.</p>
+
+        <div class="mode-buttons">
+          <button class="btn mode-btn active" data-mode="endless">
+            <strong>Endless</strong>
+            <span>1 miss = Game Over. Speed rises!</span>
+          </button>
+          <button class="btn mode-btn" data-mode="lives">
+            <strong>3-Lives</strong>
+            <span>3 hearts + center sweet-spot bonus</span>
+          </button>
+          <button class="btn mode-btn" data-mode="lockpicker">
+            <strong>Lockpicker</strong>
+            <span>Crack progressive lock levels</span>
+          </button>
+          <button class="btn mode-btn" data-mode="overload">
+            <strong>Overload</strong>
+            <span>Multi-targets shrink &amp; vanish!</span>
+          </button>
+        </div>
+
+        <button id="start-btn" class="btn primary-btn">PLAY</button>
+      </div>
+    </div>
+
+    <footer>
+      <span id="mode-indicator">Mode: Endless</span>
+      <button id="menu-btn" class="small-btn hidden">Change Mode</button>
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
